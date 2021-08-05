@@ -131,24 +131,6 @@ class GreeterClient {
   std::unique_ptr<Greeter::Stub> stub_;
 };
 
-// a simple exact match authorization class.
-//class ExampleSyncTlsAuthorization : public TlsAuthorizationCheckInterface {
-//  int Schedule(TlsAuthorizationCheckArg* arg) override {
-//    std::string target_name = arg->target_name();
-//    std::string peer_cert = arg->peer_cert();
-//    std::string spiffe_id = arg->spiffe_id();
-//    if (spiffe_id == "spiffe://foo.bar.com/workload/id/1") {
-//        arg->set_success(1);
-//        arg->set_status(GRPC_STATUS_OK);
-//    } else {
-//        arg->set_success(0);
-//        arg->set_status(GRPC_STATUS_CANCELLED);
-//    }
-//    /** Return zero to indicate that authorization was done synchronously. **/
-//    return 0;
-//  }
-//};
-
 int main(int argc, char** argv) {
   // Instantiate the client. It requires a channel, out of which the actual RPCs
   // are created. This channel models a connection to an endpoint specified by
